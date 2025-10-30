@@ -50,6 +50,15 @@ def init_db():
     )
     """)
 
+    cursor.execute("""
+    CREATE TABLE IF NOT EXISTS login_attempts (
+        email TEXT PRIMARY KEY,
+        failed_attempts INTEGER NOT NULL DEFAULT 0,
+        block_expires_at TIMESTAMPTZ,
+        FOREIGN KEY (email) REFERENCES users (email) ON DELETE CASCADE
+    )
+    """)
+
     conn.commit()
     cursor.close()
     conn.close()
