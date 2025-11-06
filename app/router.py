@@ -13,7 +13,7 @@ from .redis_client import get_redis_connection
 router = APIRouter(prefix="/api/v1/auth", tags=["Autenticação"])
 
 LIMITE_TENTATIVAS_LOGIN = 3
-BLOQUEIO_SEGUNDOS = 15
+BLOQUEIO_SEGUNDOS = 600
 
 LIMITE_REQUISICOES = 20
 LIMITE_SEGUNDOS = 60
