@@ -20,7 +20,9 @@ class UserLogin(BaseModel):
     email: str
     password: str
 
-class PassRecovery(BaseModel):
+class PassForgotRequest(BaseModel):
     email: str
-    document: str
+
+class PassResetRequest(BaseModel):
+    token: str
     new_pass: str
